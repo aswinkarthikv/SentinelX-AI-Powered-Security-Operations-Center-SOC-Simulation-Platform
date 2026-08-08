@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { GlassCard } from '../ui/GlassCard';
-import { Bot, Send, Sparkles, X, Terminal, Shield, FileText, Zap } from 'lucide-react';
+import { Bot, Send, Sparkles, X, Terminal, Shield, FileText, Zap, Copy, Check } from 'lucide-react';
 import { api } from '../../services/api';
 
 interface AIChatDrawerProps {
@@ -13,11 +13,12 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({ isOpen = true, onClo
   const [messages, setMessages] = useState<Array<{ role: 'user' | 'assistant'; content: string }>>([
     {
       role: 'assistant',
-      content: "### 🛡️ SentinelX AI Security Analyst Ready\n\nGreetings Senior Analyst. I am your AI SOC Assistant powered by Claude/Gemini API. How can I assist with triage, containment scripts, or threat intelligence analysis today?"
+      content: "### 🛡️ SentinelX AI Security Analyst Ready\n\nGreetings Senior Analyst **Aswin Karthik**. I am your AI SOC Assistant powered by Claude-3.5 Sonnet / Gemini API model.\n\nHow can I assist with threat triage, Linux/Windows containment playbooks, or executive summaries today?"
     }
   ]);
   const [input, setInput] = useState('');
   const [loading, setLoading] = useState(false);
+  const [copiedIdx, setCopiedIdx] = useState<number | null>(null);
 
   const handleSend = async (promptToSend?: string) => {
     const prompt = promptToSend || input;
@@ -38,6 +39,12 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({ isOpen = true, onClo
     }
   };
 
+  const copyToClipboard = (text: string, idx: number) => {
+    navigator.clipboard.writeText(text);
+    setCopiedIdx(idx);
+    setTimeout(() => setCopiedIdx(null), 2000);
+  };
+
   const quickPrompts = [
     "Explain critical SQL injection alert",
     "Generate containment playbook for IP 185.220.101.5",
@@ -52,15 +59,15 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({ isOpen = true, onClo
       {/* Drawer Header */}
       <div className="flex items-center justify-between border-b border-slate-800 pb-3">
         <div className="flex items-center gap-2">
-          <div className="p-2 rounded-lg bg-purple-500/10 border border-purple-500/30 text-purple-400">
+          <div className="p-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 pulse-purple">
             <Bot className="w-5 h-5" />
           </div>
           <div>
             <h3 className="text-sm font-bold text-slate-100 flex items-center gap-1.5">
               <span>SentinelX AI Security Analyst</span>
-              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+              <Sparkles className="w-3.5 h-3.5 text-purple-400 animate-spin-slow" />
             </h3>
-            <p className="text-[10px] text-purple-300 font-mono">Claude-3.5 Sonnet / Gemini API SOC Model</p>
+            <p className="text-[10px] text-purple-300 font-mono">Claude-3.5 Sonnet / Gemini API Model</p>
           </div>
         </div>
         {onClose && (
@@ -78,12 +85,24 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({ isOpen = true, onClo
             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`max-w-[85%] p-4 rounded-xl text-xs space-y-2 leading-relaxed ${
+              className={`max-w-[90%] p-4 rounded-2xl text-xs space-y-2 leading-relaxed ${
                 msg.role === 'user'
-                  ? 'bg-cyan-600/30 border border-cyan-500/40 text-cyan-100'
+                  ? 'bg-cyan-600/30 border border-cyan-500/40 text-cyan-100 shadow-md'
                   : 'bg-slate-900/90 border border-slate-800 text-slate-200 shadow-xl'
               }`}
             >
+              <div className="flex items-center justify-between text-[10px] text-slate-400 border-b border-slate-800/60 pb-1 mb-2">
+                <span className="font-mono font-bold text-cyan-400">{msg.role === 'user' ? 'Aswin Karthik' : 'SentinelX AI Assistant'}</span>
+                {msg.role === 'assistant' && (
+                  <button
+                    onClick={() => copyToClipboard(msg.content, idx)}
+                    className="flex items-center gap-1 text-[10px] text-purple-400 hover:text-purple-300 transition"
+                  >
+                    {copiedIdx === idx ? <Check className="w-3 h-3 text-emerald-400" /> : <Copy className="w-3 h-3" />}
+                    <span>{copiedIdx === idx ? 'Copied' : 'Copy'}</span>
+                  </button>
+                )}
+              </div>
               <div className="whitespace-pre-wrap font-sans">{msg.content}</div>
             </div>
           </div>
@@ -117,12 +136,12 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({ isOpen = true, onClo
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-          className="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500"
+          className="flex-1 bg-slate-900 border border-slate-700/80 rounded-xl px-4 py-2.5 text-xs text-slate-100 placeholder-slate-500 focus:outline-none focus:border-purple-500 font-sans"
         />
         <button
           onClick={() => handleSend()}
           disabled={loading}
-          className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition"
+          className="px-4 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white font-bold text-xs transition flex items-center gap-1 shadow-lg"
         >
           <Send className="w-4 h-4" />
         </button>
@@ -131,7 +150,7 @@ export const AIChatDrawer: React.FC<AIChatDrawerProps> = ({ isOpen = true, onClo
   );
 
   if (standalone) {
-    return <GlassCard className="p-6 border-purple-500/20">{content}</GlassCard>;
+    return <GlassCard className="p-6 border-purple-500/30">{content}</GlassCard>;
   }
 
   return (
