@@ -30,7 +30,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       // Default demo login session if not authenticated
       setUser({
         id: 1,
-        username: 'analyst_karthik',
+        username: 'Aswin Karthik',
         email: 'karthik@sentinelx.soc',
         role: 'SOC Analyst',
         department: 'Cyber Defense Operations',

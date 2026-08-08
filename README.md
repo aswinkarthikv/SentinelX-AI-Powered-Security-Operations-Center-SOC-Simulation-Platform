@@ -96,6 +96,15 @@ If your site is currently showing the `README.md` markdown text instead of the i
 
 ---
 
+## Default Demo Credentials
+
+| Role | Username | Password |
+| :--- | :--- | :--- |
+| **Admin** | `admin` | `Admin@123` |
+| **SOC Analyst** | `Aswin Karthik` | `Analyst@123` |
+
+---
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).

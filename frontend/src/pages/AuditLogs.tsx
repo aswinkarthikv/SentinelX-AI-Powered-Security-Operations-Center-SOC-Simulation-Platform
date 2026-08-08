@@ -4,10 +4,10 @@ import { FileText, Shield, User, Clock } from 'lucide-react';
 
 export const AuditLogsPage: React.FC = () => {
   const auditLogs = [
-    { id: 1, action: 'USER_LOGIN', username: 'analyst_karthik', target: 'SOC Portal', ip: '192.168.1.105', timestamp: new Date().toISOString() },
-    { id: 2, action: 'INCIDENT_STATUS_UPDATE', username: 'analyst_karthik', target: 'Incident #1', ip: '192.168.1.105', timestamp: new Date(Date.now() - 3600000).toISOString() },
+    { id: 1, action: 'USER_LOGIN', username: 'Aswin Karthik', target: 'SOC Portal', ip: '192.168.1.105', timestamp: new Date().toISOString() },
+    { id: 2, action: 'INCIDENT_STATUS_UPDATE', username: 'Aswin Karthik', target: 'Incident #1', ip: '192.168.1.105', timestamp: new Date(Date.now() - 3600000).toISOString() },
     { id: 3, action: 'RULE_TOGGLE', username: 'admin', target: 'Rule: Brute Force', ip: '10.0.0.12', timestamp: new Date(Date.now() - 7200000).toISOString() },
-    { id: 4, action: 'REPORT_EXPORT', username: 'analyst_karthik', target: 'Daily SOC PDF', ip: '192.168.1.105', timestamp: new Date(Date.now() - 14400000).toISOString() }
+    { id: 4, action: 'REPORT_EXPORT', username: 'Aswin Karthik', target: 'Daily SOC PDF', ip: '192.168.1.105', timestamp: new Date(Date.now() - 14400000).toISOString() }
   ];
 
   return (

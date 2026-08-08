@@ -62,7 +62,7 @@ def seed_initial_data():
         admin.set_password('Admin@123')
 
         analyst = User(
-            username='analyst_karthik',
+            username='Aswin Karthik',
             email='karthik@sentinelx.soc',
             role='SOC Analyst',
             department='Incident Response Team'

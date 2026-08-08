@@ -5,7 +5,7 @@ import { Shield, Lock, User as UserIcon, AlertCircle } from 'lucide-react';
 import { GlassCard } from '../components/ui/GlassCard';
 
 export const Login: React.FC = () => {
-  const [username, setUsername] = useState('analyst_karthik');
+  const [username, setUsername] = useState('Aswin Karthik');
   const [password, setPassword] = useState('Analyst@123');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -87,7 +87,7 @@ export const Login: React.FC = () => {
         </form>
 
         <div className="pt-4 border-t border-slate-800 text-center text-[11px] text-slate-500">
-          Demo Default: <span className="text-cyan-400 font-mono">analyst_karthik</span> / <span className="text-cyan-400 font-mono">Analyst@123</span>
+          Demo Default: <span className="text-cyan-400 font-mono">Aswin Karthik</span> / <span className="text-cyan-400 font-mono">Analyst@123</span>
         </div>
       </GlassCard>
     </div>

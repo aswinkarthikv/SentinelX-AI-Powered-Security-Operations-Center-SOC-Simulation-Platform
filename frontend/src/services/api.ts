@@ -155,7 +155,7 @@ function handleStaticFallback<T>(url: string, options: RequestInit): T {
       refresh_token: 'static-refresh-token',
       user: {
         id: 1,
-        username: 'analyst_karthik',
+        username: 'Aswin Karthik',
         email: 'karthik@sentinelx.soc',
         role: 'SOC Analyst',
         department: 'Cyber Defense Operations',
