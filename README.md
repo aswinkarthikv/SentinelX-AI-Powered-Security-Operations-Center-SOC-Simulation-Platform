@@ -10,7 +10,17 @@
 
 🌐 **Live GitHub Pages Website**: [https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/](https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/)
 
-**SentinelX** is a production-grade, enterprise Security Operations Center (SOC) simulation platform engineered to replicate modern cyber defense infrastructure used by leading technology companies and security providers such as **CrowdStrike, Palo Alto Networks, Splunk, Amazon, Microsoft, and Google**.
+---
+
+## 🛠️ GitHub Pages One-Click Setup Guide
+
+If your GitHub Pages site is currently showing the `README.md` text instead of the interactive website app:
+
+1. Open your repository on GitHub: [https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform](https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform)
+2. Click on **Settings** (⚙️ top tab) ➔ Click **Pages** in the left navigation sidebar.
+3. Under **Build and deployment**:
+   - Change **Source** from `Deploy from a branch` to **`GitHub Actions`**.
+4. That's it! GitHub Actions will run `.github/workflows/deploy-gh-pages.yml` and launch the full interactive React website at `https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/`.
 
 ---
 
@@ -74,33 +84,15 @@
 
 ---
 
-## Deployment & Hosting
+## Technology Stack
 
-### Live GitHub Pages
-The web platform is automatically deployed and hosted on GitHub Pages via GitHub Actions workflow (`deploy-gh-pages.yml`).
-
-### Docker Compose
-```bash
-docker-compose up -d --build
-```
-
-### Local Development
-```bash
-# Backend (Python Flask)
-cd backend && python run.py
-
-# Frontend (React 19 Vite)
-cd frontend && npm run dev
-```
-
----
-
-## Default Demo Credentials
-
-| Role | Username | Password |
-| :--- | :--- | :--- |
-| **Admin** | `admin` | `Admin@123` |
-| **SOC Analyst** | `analyst_karthik` | `Analyst@123` |
+| Layer | Technology |
+| :--- | :--- |
+| **Frontend** | React 19, TypeScript, Vite, Tailwind CSS, TanStack React Query v5, React Router v7, Chart.js, Lucide Icons, Framer Motion |
+| **Backend** | Python 3.14, Flask REST API, SQLAlchemy ORM, Flask-JWT-Extended, PyYAML, ReportLab |
+| **Database & Cache** | PostgreSQL, SQLite, Redis |
+| **Deployment** | Docker, Docker Compose, Nginx, Gunicorn |
+| **CI/CD** | GitHub Actions Workflow |
 
 ---
 
