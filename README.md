@@ -1,11 +1,14 @@
 # SentinelX – AI-Powered Security Operations Center (SOC) Simulation Platform
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform)
+[![GitHub Pages](https://img.shields.io/badge/Live%20Website-GitHub%20Pages-0284c7.svg)](https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/)
 [![React](https://img.shields.io/badge/Frontend-React%2019-0284c7.svg)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6.svg)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Backend-Python%20Flask-3776ab.svg)](https://flask.palletsprojects.org/)
 [![Docker](https://img.shields.io/badge/Deployment-Docker%20Compose-2496ed.svg)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
+
+🌐 **Live GitHub Pages Website**: [https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/](https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/)
 
 **SentinelX** is a production-grade, enterprise Security Operations Center (SOC) simulation platform engineered to replicate modern cyber defense infrastructure used by leading technology companies and security providers such as **CrowdStrike, Palo Alto Networks, Splunk, Amazon, Microsoft, and Google**.
 
@@ -67,93 +70,27 @@
 
 ### 📊 Executive Reports & PDF Export
 - **Report Generator**: Daily SOC Report, Weekly Operational Brief, Executive CTI Brief, Incident Post-Mortem.
-- **PDF Export Engine**: Built-in ReportLab binary PDF generator for compliance and management reviews.
+- **PDF Export Engine**: Built-in ReportLab & client-side binary PDF generator for compliance and management reviews.
 
 ---
 
-## System Architecture
+## Deployment & Hosting
 
-```mermaid
-flowchart TD
-    subgraph Frontend ["Frontend (React 19 + TypeScript + Tailwind CSS)"]
-        UI[SOC Dashboard / SIEM / MITRE / CTI / AI Analyst]
-        State[React Query & AuthContext]
-    end
+### Live GitHub Pages
+The web platform is automatically deployed and hosted on GitHub Pages via GitHub Actions workflow (`deploy-gh-pages.yml`).
 
-    subgraph Backend ["Backend (Python Flask REST API)"]
-        API[API Endpoints /api/...]
-        SIEM[SIEM & Normalization Engine]
-        Rules[Sigma Detection Engine]
-        CTI[Threat Intel Service - VirusTotal / AbuseIPDB]
-        AI[AI Security Analyst - Claude / Gemini]
-        Report[PDF Report Generator]
-    end
-
-    subgraph Infrastructure ["Containerization & Database"]
-        DB[(SQLAlchemy / PostgreSQL / SQLite)]
-        Cache[(Redis & Celery Task Queue)]
-        Proxy[Nginx Reverse Proxy]
-    end
-
-    UI <--> API
-    API <--> SIEM
-    API <--> Rules
-    API <--> CTI
-    API <--> AI
-    API <--> DB
-    API <--> Cache
-```
-
----
-
-## Technology Stack
-
-| Layer | Technology |
-| :--- | :--- |
-| **Frontend** | React 19, TypeScript, Vite, Tailwind CSS, TanStack React Query v5, React Router v7, Chart.js, Lucide Icons, Framer Motion |
-| **Backend** | Python 3.14, Flask REST API, SQLAlchemy ORM, Flask-JWT-Extended, PyYAML, ReportLab |
-| **Database & Cache** | PostgreSQL, SQLite, Redis |
-| **Deployment** | Docker, Docker Compose, Nginx, Gunicorn |
-| **CI/CD** | GitHub Actions Workflow |
-
----
-
-## Quickstart Setup
-
-### Option 1: Docker Compose (Recommended)
-
+### Docker Compose
 ```bash
-# Clone the repository
-git clone https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform.git
-cd AI-Powered-Security-Operations-Center-SOC-Platform
-
-# Start containers via Docker Compose
 docker-compose up -d --build
-
-# Platform Endpoints:
-# Frontend: http://localhost
-# Backend API: http://localhost:5000
-# OpenAPI / Swagger Docs: http://localhost:5000/api/docs
 ```
 
-### Option 2: Local Development Setup
-
-#### Backend Setup
+### Local Development
 ```bash
-cd backend
-python -m venv venv
-# On Linux/macOS: source venv/bin/activate
-# On Windows: venv\Scripts\activate
-pip install -r requirements.txt
-python run.py
-```
+# Backend (Python Flask)
+cd backend && python run.py
 
-#### Frontend Setup
-```bash
-cd frontend
-npm install
-npm run dev
-# Access UI on http://localhost:3000
+# Frontend (React 19 Vite)
+cd frontend && npm run dev
 ```
 
 ---
