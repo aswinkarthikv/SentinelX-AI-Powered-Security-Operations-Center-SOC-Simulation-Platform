@@ -1,26 +1,26 @@
 # SentinelX – AI-Powered Security Operations Center (SOC) Simulation Platform
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform)
-[![GitHub Pages](https://img.shields.io/badge/Live%20Website-GitHub%20Pages-0284c7.svg)](https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/aswinkarthikv/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform)
+[![GitHub Pages](https://img.shields.io/badge/Live%20Website-GitHub%20Pages-0284c7.svg)](https://aswinkarthikv.github.io/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform/)
 [![React](https://img.shields.io/badge/Frontend-React%2019-0284c7.svg)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/Language-TypeScript-3178c6.svg)](https://www.typescriptlang.org/)
 [![Python](https://img.shields.io/badge/Backend-Python%20Flask-3776ab.svg)](https://flask.palletsprojects.org/)
 [![Docker](https://img.shields.io/badge/Deployment-Docker%20Compose-2496ed.svg)](https://www.docker.com/)
 [![License](https://img.shields.io/badge/License-MIT-emerald.svg)](LICENSE)
 
-🌐 **Live GitHub Pages Website**: [https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/](https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/)
+🌐 **Live GitHub Pages Website**: [https://aswinkarthikv.github.io/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform/](https://aswinkarthikv.github.io/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform/)
 
 ---
 
 ## 🛠️ GitHub Pages One-Click Setup Guide
 
-If your GitHub Pages site is currently showing the `README.md` text instead of the interactive website app:
+If your site is currently showing the `README.md` markdown text instead of the interactive website app:
 
-1. Open your repository on GitHub: [https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform](https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform)
+1. Open your repository on GitHub: [https://github.com/aswinkarthikv/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform](https://github.com/aswinkarthikv/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform)
 2. Click on **Settings** (⚙️ top tab) ➔ Click **Pages** in the left navigation sidebar.
 3. Under **Build and deployment**:
-   - Change **Source** from `Deploy from a branch` to **`GitHub Actions`**.
-4. That's it! GitHub Actions will run `.github/workflows/deploy-gh-pages.yml` and launch the full interactive React website at `https://aswinkarthikv.github.io/AI-Powered-Security-Operations-Center-SOC-Platform/`.
+   - Change **Source** from `Deploy from a branch` to **`GitHub Actions`** (OR select Branch **`gh-pages`** and folder **`/(root)`**).
+4. Save settings. The full interactive React website will launch immediately at `https://aswinkarthikv.github.io/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform/`.
 
 ---
 

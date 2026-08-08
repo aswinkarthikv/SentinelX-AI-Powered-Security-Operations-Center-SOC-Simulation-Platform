@@ -1,13 +1,18 @@
 # SentinelX Deployment & Installation Guide
 
-## Docker Compose Production Deployment (Recommended)
+## GitHub Pages Live Hosting
+
+The application is deployed live on GitHub Pages:
+[https://aswinkarthikv.github.io/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform/](https://aswinkarthikv.github.io/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform/)
+
+## Docker Compose Production Deployment
 
 To deploy SentinelX in a containerized production environment with Nginx, Gunicorn, Flask, PostgreSQL, and Redis:
 
 ```bash
 # 1. Clone Repository
-git clone https://github.com/aswinkarthikv/AI-Powered-Security-Operations-Center-SOC-Platform.git
-cd AI-Powered-Security-Operations-Center-SOC-Platform
+git clone https://github.com/aswinkarthikv/SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform.git
+cd SentinelX-AI-Powered-Security-Operations-Center-SOC-Simulation-Platform
 
 # 2. Build and Start All Containers
 docker-compose up -d --build
