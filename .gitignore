@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
+*.sqlite3
+venv/
+.venv/
+backend/app/sentinelx.db
+
+# Node / React
+node_modules/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Env secrets
+.env
+.env.local
